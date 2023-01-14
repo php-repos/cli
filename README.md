@@ -1,17 +1,17 @@
-# Saeghe CLI Package
+# PhpRepos CLI Package
 
 ## Introduction
 
-Saeghe CLI Package has a set of useful functions to work with CLI. You can use these functions to interact with CLI.
+PhpRepos CLI Package has a set of useful functions to work with CLI. You can use these functions to interact with CLI.
 
 ## Installation
 
-You can simply install this package using Saeghe by running the following command:
+You can simply install this package using `phpkg` by running the following command:
 
 ```shell
-saeghe add git@github.com:saeghe/cli.git
+phpkg add git@github.com:php-repos/cli.git
 ```
 
 ## Documentation
 
-All documents can be found under [documentations](https://saeghe.com/packages/cli/documentations/getting-started)
+All documents can be found under [documentations](https://phpkg.com/packages/cli/documentations/getting-started)

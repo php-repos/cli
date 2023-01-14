@@ -3,6 +3,6 @@
 
 namespace Tests\IO\ReadHelper;
 
-use function Saeghe\Cli\IO\Read\parameter;
+use function PhpRepos\Cli\IO\Read\parameter;
 
-echo parameter('email', 'default-email@saeghe.com');
+echo parameter('email', 'default-email@phpkg.com');

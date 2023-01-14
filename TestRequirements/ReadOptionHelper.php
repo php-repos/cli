@@ -3,6 +3,6 @@
 
 namespace Tests\IO\ReadHelper;
 
-use function Saeghe\Cli\IO\Read\option;
+use function PhpRepos\Cli\IO\Read\option;
 
 echo option('option-name');

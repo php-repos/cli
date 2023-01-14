@@ -3,10 +3,10 @@
 
 namespace Tests\IO\WriteHelper;
 
-use function Saeghe\Cli\IO\Read\parameter;
-use function Saeghe\Cli\IO\Write\error;
-use function Saeghe\Cli\IO\Write\line;
-use function Saeghe\Cli\IO\Write\success;
+use function PhpRepos\Cli\IO\Read\parameter;
+use function PhpRepos\Cli\IO\Write\error;
+use function PhpRepos\Cli\IO\Write\line;
+use function PhpRepos\Cli\IO\Write\success;
 
 $function = parameter('function');
 $message = parameter('message');

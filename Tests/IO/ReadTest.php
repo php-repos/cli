@@ -2,17 +2,18 @@
 
 namespace Tests\IO\Read;
 
-use function Saeghe\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Runner\test;
 
 test(
     title: 'it should read parameter from input',
     case: function () {
-        $email = 'my_email@saeghe.com';
+        $email = 'my_email@phpkg.com';
         $output = shell_exec(__DIR__ . '/../../TestRequirements/ReadParameterHelper.php --email=' . $email);
         assert_true($output === $email, $output);
 
         $output = shell_exec(__DIR__ . '/../../TestRequirements/ReadParameterHelper.php');
-        assert_true('default-email@saeghe.com' === $output, $output);
+        assert_true('default-email@phpkg.com' === $output, $output);
 
         $output = shell_exec(__DIR__ . '/../../TestRequirements/ReadParameterHelper.php a-command --email=' . $email);
         assert_true($output === $email, $output);

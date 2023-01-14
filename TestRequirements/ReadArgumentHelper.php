@@ -3,8 +3,8 @@
 
 namespace Tests\IO\ReadHelper;
 
-use function Saeghe\Cli\IO\Read\parameter;
-use function Saeghe\Cli\IO\Read\argument;
+use function PhpRepos\Cli\IO\Read\parameter;
+use function PhpRepos\Cli\IO\Read\argument;
 
 $number = parameter('number');
 

@@ -1,6 +1,6 @@
 {
     "map": {
-        "Saeghe\\Cli": "Source",
+        "PhpRepos\\Cli": "Source",
         "Tests": "Tests"
     },
     "entry-points": [],
@@ -8,6 +8,6 @@
     "executables": [],
     "packages-directory": "Packages",
     "packages": {
-        "git@github.com:saeghe\/test-runner.git": "v3.0.0"
+        "git@github.com:php-repos\/test-runner.git": "v1.0.0"
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Saeghe\Cli\IO\Write;
+namespace PhpRepos\Cli\IO\Write;
 
 use AssertionError;
 

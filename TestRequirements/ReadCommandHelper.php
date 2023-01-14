@@ -3,6 +3,6 @@
 
 namespace Tests\IO\ReadHelper;
 
-use function Saeghe\Cli\IO\Read\command;
+use function PhpRepos\Cli\IO\Read\command;
 
 echo command();

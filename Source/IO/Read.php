@@ -1,6 +1,6 @@
 <?php
 
-namespace Saeghe\Cli\IO\Read;
+namespace PhpRepos\Cli\IO\Read;
 
 function argument(int $number, ?string $default = null): ?string
 {
