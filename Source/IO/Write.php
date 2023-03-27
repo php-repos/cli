@@ -16,36 +16,39 @@ function assert_output(string $expected, string $actual): bool
 
 function line(string $string): void
 {
-    output("\e[39m$string" . PHP_EOL);
+    $message = PHP_OS === 'WINNT' ? $string : "\e[39m$string";
+    output($message . PHP_EOL);
 }
 
 function assert_line(string $expected, string $actual): bool
 {
-    $expected = "\e[39m$expected" . PHP_EOL;
+    $expected = PHP_OS === 'WINNT' ? $expected : "\e[39m$expected";
 
-    return assert_output($expected, $actual);
+    return assert_output($expected . PHP_EOL, $actual);
 }
 
 function success(string $string): void
 {
-    output("\e[92mSuccess: $string\e[39m" . PHP_EOL);
+    $message = PHP_OS === 'WINNT' ? "Success: $string" : "\e[92mSuccess: $string\e[39m";
+    output($message . PHP_EOL);
 }
 
 function assert_success(string $expected, string $actual): bool
 {
-    $expected = "\e[92mSuccess: $expected\e[39m" . PHP_EOL;
+    $expected = PHP_OS === 'WINNT' ? "Success: $expected" : "\e[92mSuccess: $expected\e[39m";
 
-    return assert_output($expected, $actual);
+    return assert_output($expected . PHP_EOL, $actual);
 }
 
 function error(string $string): void
 {
-    output("\e[91mError: $string\e[39m" . PHP_EOL);
+    $message = PHP_OS === 'WINNT' ? "Error: $string" : "\e[91mError: $string\e[39m";
+    output($message . PHP_EOL);
 }
 
 function assert_error(string $expected, string $actual): bool
 {
-    $expected = "\e[91mError: $expected\e[39m" . PHP_EOL;
+    $expected = PHP_OS === 'WINNT' ? "Error: $expected" : "\e[91mError: $expected\e[39m";
 
-    return assert_output($expected, $actual);
+    return assert_output($expected  . PHP_EOL, $actual);
 }
