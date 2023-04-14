@@ -8,7 +8,7 @@ use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
 use function PhpRepos\TestRunner\Runner\test;
 
 test(
-    title: 'it should write line message to output',
+    title: 'it should write a message to output',
     case: function () {
         $message = 'This is an message to see on output.';
         $output = shell_exec(__DIR__ . '/../../TestRequirements/WriteHelper.php --function=output --message="' . $message . '"');
@@ -18,7 +18,7 @@ test(
 );
 
 test(
-    title: 'it should assert the message on output',
+    title: 'it should assert a message on output',
     case: function () {
         $message = 'This is a message to see on output.';
         $output = shell_exec(__DIR__ . '/../../TestRequirements/WriteHelper.php --function=output --message="' . $message . '"');
