@@ -43,9 +43,7 @@ test(
         $message = 'This is an message to see on output.';
         $output = shell_exec(__DIR__ . '/../../TestRequirements/WriteHelper.php --function=line --message="' . $message . '"');
 
-        $expected = PHP_OS === 'WINNT' ? $message : "\e[39m$message";
-
-        assert_true($output ===  $expected . PHP_EOL, 'Line function does not work properly!');
+        assert_true($output ===  "\e[39m$message" . PHP_EOL, 'Line function does not work properly!');
     }
 );
 
@@ -58,8 +56,8 @@ test(
 
         $output = shell_exec(__DIR__ . '/../../TestRequirements/WriteHelper.php --function=line --message="' . $message . '"');
         $expected = 'expected output';
-        $expectedOutput = PHP_OS === 'WINNT' ? $expected . PHP_EOL : "\e[39m$expected" . PHP_EOL;
-        $actualOutput = PHP_OS === 'WINNT' ? $message . PHP_EOL : "\e[39m$message" . PHP_EOL;
+        $expectedOutput = "\e[39m$expected" . PHP_EOL;
+        $actualOutput = "\e[39m$message" . PHP_EOL;
         try {
             Write\assert_line($expected, $output);
         } catch (AssertionError $exception) {
@@ -76,7 +74,7 @@ test(
     case: function () {
         $message = 'This is a success message to see on output.';
         $output = shell_exec(__DIR__ . '/../../TestRequirements/WriteHelper.php --function=success --message="' . $message . '"');
-        $expected = PHP_OS === 'WINNT' ? "Success: $message" : "\e[92mSuccess: $message\e[39m";
+        $expected = "\e[92m$message\e[39m";
         assert_true($output === $expected . PHP_EOL, 'Success function does not work properly!');
     }
 );
@@ -90,8 +88,8 @@ test(
 
         $output = shell_exec(__DIR__ . '/../../TestRequirements/WriteHelper.php --function=success --message="' . $message . '"');
         $expected = 'expected output';
-        $expectedOutput = PHP_OS === 'WINNT' ? "Success: $expected" : "\e[92mSuccess: $expected\e[39m" . PHP_EOL;
-        $actualOutput = PHP_OS === 'WINNT' ? "Success: $message" : "\e[92mSuccess: $message\e[39m" . PHP_EOL;
+        $expectedOutput = "\e[92m$expected\e[39m" . PHP_EOL;
+        $actualOutput = "\e[92m$message\e[39m" . PHP_EOL;
         try {
             Write\assert_success($expected, $output);
         } catch (AssertionError $exception) {
@@ -108,7 +106,7 @@ test(
     case: function () {
         $message = 'This is an error message to see on output.';
         $output = shell_exec(__DIR__ . '/../../TestRequirements/WriteHelper.php --function=error --message="' . $message . '"');
-        $expected = PHP_OS === 'WINNT' ? "Error: $message" : "\e[91mError: $message\e[39m";
+        $expected = "\e[91m$message\e[39m";
         assert_true($output === $expected . PHP_EOL, 'error function does not work properly!');
     }
 );
@@ -122,8 +120,8 @@ test(
 
         $output = shell_exec(__DIR__ . '/../../TestRequirements/WriteHelper.php --function=error --message="' . $message . '"');
         $expected = 'expected output';
-        $expectedOutput = PHP_OS === 'WINNT' ? "Error: $expected" . PHP_EOL : "\e[91mError: $expected\e[39m" . PHP_EOL;
-        $actualOutput = PHP_OS === 'WINNT' ? "Error: $message" . PHP_EOL : "\e[91mError: $message\e[39m" . PHP_EOL;
+        $expectedOutput = "\e[91m$expected\e[39m" . PHP_EOL;
+        $actualOutput = "\e[91m$message\e[39m" . PHP_EOL;
         try {
             Write\assert_error($expected, $output);
         } catch (AssertionError $exception) {
