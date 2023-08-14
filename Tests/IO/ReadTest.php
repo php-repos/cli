@@ -27,6 +27,9 @@ test(
         $output = shell_exec(__DIR__ . '/../../TestRequirements/ReadCommandHelper.php ' . $command);
         assert_true($output === $command, $output);
 
+        $output = shell_exec(__DIR__ . '/../../TestRequirements/ReadCommandHelper.php --params="does not have effect" ' . $command);
+        assert_true($output === $command, $output);
+
         $output = shell_exec(__DIR__ . '/../../TestRequirements/ReadCommandHelper.php --command=' . $command);
         assert_true(is_null($output), $output);
 
