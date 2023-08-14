@@ -23,7 +23,17 @@ function command(): ?string
 {
     global $argv;
 
-    return ! isset($argv[1]) || str_starts_with($argv[1], '-') ? null : $argv[1];
+    foreach ($argv as $index => $argument) {
+        if ($index === 0) {
+            continue;
+        }
+
+        if (! str_starts_with($argument, '-')) {
+            return $argument;
+        }
+    }
+
+    return null;
 }
 
 function parameter(string $name, ?string $default = null): ?string
