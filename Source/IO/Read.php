@@ -17,10 +17,13 @@ function argument(int $number, ?string $default = null): ?string
 {
     global $argv;
 
-    // Filter out arguments starting with '-' (assumes no positional arguments start with '-')
-    $inputs = array_filter($argv, function ($userInput) {
-        return !str_starts_with($userInput, '-');
-    });
+    $inputs = [];
+
+    foreach ($argv as $userInput) {
+        if (! str_starts_with($userInput, '-')) {
+            $inputs[] = $userInput;
+        }
+    }
 
     unset($inputs[0]); // Remove script name
 
