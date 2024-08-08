@@ -6,7 +6,7 @@
 namespace PhpRepos\Cli\Output;
 
 use Closure;
-use function PhpRepos\TestRunner\Assertions\Boolean\assert_true;
+use function PhpRepos\TestRunner\Assertions\assert_true;
 
 /**
  * Capture Output Function
